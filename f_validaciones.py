@@ -8,4 +8,6 @@ def validar_nombre(nombre_p :str) -> str : # type: ignore
     return nombre_p
 
 
-if __name__ is 
+if __name__ is "main":
+
+    
