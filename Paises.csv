@@ -1,6 +1,6 @@
-﻿nombre;poblacion;superficie;continente
-Argentina;45376763;2780400;America
-Japon;125800000;377975;Asia
-Brasil;213993437;8515767;America
-Alemania;83149300;357022;Europa
-Australia;25687041;7692024;Oceania
+﻿nombre,poblacion,superficie,continente
+argentina,45376763,2780400,america
+japon,125800000,377975,asia
+brasil,213993437,8515767,america
+alemania,83149300,357022,europa
+australia,25687041,7692024,oceania
