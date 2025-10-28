@@ -1,3 +1,5 @@
+from menu_buscar import buscar_paises
+
 print('''
 ======MENU DE OPERACIONES======
       1- Buscar un pais por nombre
@@ -11,7 +13,7 @@ opcion_menu :str = input ("Que operación desea realizar: ")
 
 while True:
     if opcion_menu == "1":
-        print ("Buscar paises")
+        buscar_paises()
 
     elif opcion_menu == "2":
         print ("Filtrar paises")

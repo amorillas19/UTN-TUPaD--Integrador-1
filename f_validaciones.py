@@ -1,5 +1,9 @@
-def validar_nombre(nombre_p :str) -> str : # type: ignore
+
+#Funcion general para validar el ingreso de una palabra
+def validar_nombre (nombre_p :str)-> str : # type: ignore
     
+    nombre_p = nombre_p.lower()
+
     if nombre_p == "" or not(nombre_p.isalpha()):
         print("No se pueden ingresar numeros, o dejar el campo vacio")
         while (nombre_p == "" or not(nombre_p.isalpha())):
@@ -8,6 +12,10 @@ def validar_nombre(nombre_p :str) -> str : # type: ignore
     return nombre_p
 
 
-if __name__ is "main":
+if __name__ == "__main__":
 
-    
+    print ("Probando validaciones...")
+
+    nombre_1 = "111"
+    resultado = validar_nombre(nombre_1)
+    print(f"Prueba con {nombre_1}: {resultado}")
