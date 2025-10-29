@@ -11,11 +11,13 @@ def buscar_paises():
       
     for i in range(1,len(lista_paises)):
         if opcion_busqueda == lista_paises[i]["nombre"]:
+            print("====BUSQUEDA EXACTA====")
             print(f"""
                   Pais -- {lista_paises[i]["nombre"].capitalize()}: 
                   Poblacion: {lista_paises[i]["poblacion"]} habitantes, 
                   Superficie {lista_paises[i]["superficie"]} km2, 
                   Continente: {lista_paises[i]["continenete"].capitalize()}""")
+            print("============")
 
 
 
