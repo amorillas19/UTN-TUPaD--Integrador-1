@@ -10,8 +10,8 @@ def armar_lista():
         for i in range (len(lista_paises)):
             lista_paises[i] = lista_paises[i].strip().split(",")
             lista_paises [i] = {"nombre":lista_paises[i][0], 
-                                "poblacion":lista_paises[i][1],
-                                "superficie":lista_paises[i][2],
+                                "poblacion":int(lista_paises[i][1]),
+                                "superficie":float(lista_paises[i][2]),
                                 "continenete":lista_paises[i][3]
                                 }
     
