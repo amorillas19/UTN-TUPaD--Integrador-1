@@ -1,5 +1,6 @@
 import requests
 import json
+import csv
 
 #Se llama la API y se construye un JSON para almacenar localmente datos
 def armar_api():
@@ -58,15 +59,12 @@ def escribir_csv():
     try:
         procesar_lista=procesar_json()
 
-        with open("paises.csv", "w") as archivo:
-            archivo.writelines(f"nombre,poblacion,superficie,continente\n")
-            for pais in procesar_lista:
-                nombre_csv = pais['nombre']
-                poblacion_csv = int(pais['poblacion'])
-                superficie_csv = float(pais['superficie'])
-                continente_csv = pais['continente']
-
-                archivo.writelines(f"{nombre_csv},{poblacion_csv},{superficie_csv},{continente_csv}\n")
+        with open("paises.csv", "w", newline="", encoding="utf-8") as archivo:
+            campos = ["nombre", "poblacion", "superficie", "continente"]
+            
+            writer = csv.DictWriter(archivo, fieldnames=campos)
+            writer.writeheader()
+            writer.writerows(procesar_lista)
         
         print("CSV armado exitosamente!")
 
