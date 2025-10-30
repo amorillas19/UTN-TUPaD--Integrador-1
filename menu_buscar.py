@@ -10,19 +10,19 @@ try:
 
         lista_paises = csv_cargar_lista()
 
-        if lista_paises is None:
-            print("Lista vacia")
-        else:
-            for i in range(1,len(lista_paises)):
-                if opcion_busqueda == lista_paises[i]["nombre"]:
-                    print("====BUSQUEDA EXACTA====")
-                    print(f"Estoy en el numero: {i}")
-                    print(f"""
-                            Pais -- {lista_paises[i]["nombre"].capitalize()}: 
-                            Poblacion: {lista_paises[i]["poblacion"]} habitantes, 
-                            Superficie {lista_paises[i]["superficie"]} km2, 
-                            Continente: {lista_paises[i]["continenete"].capitalize()}""")
-                    print("============")
+        print("ACA SE DEBERIA IMPRIMIR LA LISTA DE PAISES")
+        print(lista_paises[0]["nombre"])
+
+        '''for i in range(len(lista_paises)):
+            if opcion_busqueda == lista_paises[i]["nombre"]:
+                print("====BUSQUEDA EXACTA====")
+                print(f"Estoy en el numero: {i}")
+                print(f"""
+                        Pais -- {lista_paises[i]["nombre"].capitalize()}: 
+                        Poblacion: {lista_paises[i]["poblacion"]} habitantes, 
+                        Superficie {lista_paises[i]["superficie"]} km2, 
+                        Continente: {lista_paises[i]["continenete"].capitalize()}""")
+                print("============")'''
 
 except Exception as e:
     print (f"Ocurrio el error {type(e).__name__}: {e}")   
