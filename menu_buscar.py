@@ -11,9 +11,9 @@ try:
         lista_paises = csv_cargar_lista()
 
         print("ACA SE DEBERIA IMPRIMIR LA LISTA DE PAISES")
-        print(lista_paises)
+        print(lista_paises[0]["nombre"])
 
-        '''for i in range(1,len(lista_paises)):
+        '''for i in range(len(lista_paises)):
             if opcion_busqueda == lista_paises[i]["nombre"]:
                 print("====BUSQUEDA EXACTA====")
                 print(f"Estoy en el numero: {i}")
