@@ -20,40 +20,40 @@ def menu_continente():
         opcion_continente = input("Que continente desea buscar: ").strip()
         match opcion_continente:
             case "1":
-                opcion_continente = "North America"
-                print(filtrar_continente(opcion_continente))
+                opcion_continente = "['North America']" 
+                filtrar_continente(opcion_continente)
                 bandera_continente = False
             
             case "2":
-                opcion_continente = "South America"
+                opcion_continente = "['South America']" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
             case "3":
-                opcion_continente = "Europe"
+                opcion_continente = "['Europe']" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
             case "4":
-                opcion_continente = "Africa"
+                opcion_continente = "['Africa']" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "5":
-                opcion_continente = "Asia"
+                opcion_continente = "['Asia']" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "6":
-                opcion_continente = "Oceania"
+                opcion_continente = "['Oceania']" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "7":
-                opcion_continente = "Antarctica"
+                opcion_continente = "['Antarctica']" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
 
@@ -65,16 +65,17 @@ def menu_continente():
 
 
 
-def filtrar_continente (filtro:str)->list:
-
+def filtrar_continente (filtro:str):
+    print(filtro)
     lista_paises = armar_lista()
     lista_filtrada = []
 
     for i in lista_paises :
         if i["continente"] == filtro:
             lista_filtrada.append(i)
-    
-    return lista_filtrada
+            
+    for i in lista_filtrada:
+        print(f"{i}\n")
 
     
 
