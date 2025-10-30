@@ -1,6 +1,7 @@
 import csv
+from f_varias import limpiar_string
 
-#Funcion para que se arme una lista, donde cada pais es un diccionario con 4 claves y valores
+#Funcion para que usando el CSV arme una lista de paises, donde cada pais es un diccionario con 4 claves y valores
 def csv_cargar_lista():
 
     lista_paises = []
@@ -10,9 +11,10 @@ def csv_cargar_lista():
 
         for linea in reader:
             nombre = linea["nombre"].lower()
-            poblacion = linea["poblacion"]
-            superficie = linea["superficie"]
+            poblacion = int(linea["poblacion"])
+            superficie = int(float(linea["superficie"]))
             continente = linea["continente"]
+            continente = limpiar_string(continente)
 
             pais = {"nombre":nombre, 
                     "poblacion":poblacion,
@@ -20,10 +22,7 @@ def csv_cargar_lista():
                     "continenete":continente
                     }
             lista_paises.append(pais)
-    
-    for pais in lista_paises:
-        print(pais)
-        
+  
     return lista_paises
 
 if __name__ == "__main__":
