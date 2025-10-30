@@ -1,5 +1,5 @@
 from f_armar_lista import armar_lista
-from f_validaciones import validar_numero_positivo
+from f_validaciones import validar_minimo_maximo
 
 def menu_continente():
     bandera_continente = True
@@ -80,33 +80,12 @@ def filtrar_continente (filtro:str)->list:
 
 
 def menu_poblacion ():
-    bandera_poblacion = True
-
     print("""
     ============ POBLACION ============
 
 """)
-    while bandera_poblacion:
-
-        minimo = input("Ingrese el parametro minimo: ")
-
-        if validar_numero_positivo(minimo):
-            minimo_int = int(minimo)
-            bandera_poblacion = False
-        else:
-            print("El parametro minimo no es valido")
-
-    while not bandera_poblacion:
-
-        maximo = input("Ingrese el parametro maximo: ")
-
-        if validar_numero_positivo(maximo):
-            maximo_int = int(maximo)
-            bandera_poblacion = True
-            filtrar_poblacion(minimo_int,maximo_int)
-
-        else:
-            print("El parametro maximo no es valido")
+    minimo, maximo = validar_minimo_maximo()
+    filtrar_poblacion(minimo,maximo)
     
 
 
@@ -119,3 +98,26 @@ def filtrar_poblacion(min:int,max:int)->list:
             lista_poblacion.append(i)
     for i in lista_poblacion:
         print (f"{i}\n")
+
+
+
+
+
+def menu_superficie():
+    print("========== SUPERFICIE ==========")
+
+    minimo, maximo = validar_minimo_maximo()
+    filtrar_superficie(minimo,maximo)
+
+
+
+def filtrar_superficie(min:int , max:int)->list:
+    lista_paises = armar_lista()
+    lista_superficie = []
+    for i in lista_paises:
+        if (i["superficie"] >= min) and (i["superficie"] <= max):
+            lista_superficie.append(i)
+    for i in lista_superficie:
+        print (f"{i}\n")
+
+

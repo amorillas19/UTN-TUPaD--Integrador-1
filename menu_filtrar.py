@@ -1,5 +1,5 @@
 from f_armar_lista import armar_lista
-from f_filtros import menu_continente, menu_poblacion
+from f_filtros import menu_continente, menu_poblacion, menu_superficie
 
 lista_paises = armar_lista()
 
@@ -24,9 +24,10 @@ def filtrar_paises():
                 bandera_filtro = False
             case "2":
                 menu_poblacion()
+                bandera_filtro = False
 
             case "3":
-                pass
-                
+                menu_superficie()
+                bandera_filtro = False
             case _: 
                 print("Opcion no valida")
