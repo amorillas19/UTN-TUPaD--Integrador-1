@@ -1,6 +1,6 @@
 
 #Funcion general para validar el ingreso de una palabra
-def validar_nombre (nombre_p :str)-> str : # type: ignore
+def validar_nombre (nombre_p :str)-> str :
     
     nombre_p = nombre_p.lower()
 
