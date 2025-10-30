@@ -6,7 +6,7 @@ def csv_cargar_lista():
     lista_paises = []
 
     with open ("paises.csv", "r") as archivo:
-        
+
         listado = archivo.readlines()
 
         for i in range (1,len(listado)):
@@ -24,8 +24,7 @@ def csv_cargar_lista():
                                 }
             lista_paises.append(pais)
     
-    for pais in lista_paises:
-        print(pais)
+    return lista_paises
 
 if __name__ == "__main__":
 
