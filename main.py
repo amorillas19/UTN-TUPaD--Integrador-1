@@ -1,5 +1,5 @@
 from menu_buscar import buscar_paises
-
+from menu_filtrar import filtrar_paises
 print('''
 ======MENU DE OPERACIONES======
       1- Buscar un pais por nombre
@@ -16,7 +16,7 @@ while True:
         buscar_paises()
 
     elif opcion_menu == "2":
-        print ("Filtrar paises")
+        
 
     elif opcion_menu == "3":
         print ("Ordenar paises")
