@@ -1,8 +1,7 @@
-from f_armar_lista import armar_lista
+from f_cargar_lista import csv_cargar_lista
 from f_filtros import menu_continente, menu_poblacion, menu_superficie
 
-lista_paises = armar_lista()
-
+lista_paises = csv_cargar_lista()
 def filtrar_paises():
     #Funcion de la opcion 2 del menu
     bandera_filtro = True

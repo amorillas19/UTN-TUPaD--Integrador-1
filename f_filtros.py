@@ -1,4 +1,4 @@
-from f_armar_lista import armar_lista
+from f_cargar_lista import csv_cargar_lista
 from f_validaciones import validar_minimo_maximo
 
 def menu_continente():
@@ -20,40 +20,40 @@ def menu_continente():
         opcion_continente = input("Que continente desea buscar: ").strip()
         match opcion_continente:
             case "1":
-                opcion_continente = "['North America']" 
+                opcion_continente = "North America" 
                 filtrar_continente(opcion_continente)
                 bandera_continente = False
             
             case "2":
-                opcion_continente = "['South America']" 
+                opcion_continente = "South America" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
             case "3":
-                opcion_continente = "['Europe']" 
+                opcion_continente = "Europe" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
             case "4":
-                opcion_continente = "['Africa']" 
+                opcion_continente = "Africa" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "5":
-                opcion_continente = "['Asia']" 
+                opcion_continente = "Asia" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "6":
-                opcion_continente = "['Oceania']" 
+                opcion_continente = "Oceania" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "7":
-                opcion_continente = "['Antarctica']" 
+                opcion_continente = "Antarctica" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
 
@@ -67,7 +67,7 @@ def menu_continente():
 
 def filtrar_continente (filtro:str):
     print(filtro)
-    lista_paises = armar_lista()
+    lista_paises = csv_cargar_lista()
     lista_filtrada = []
 
     for i in lista_paises :
@@ -92,7 +92,7 @@ def menu_poblacion ():
 
 
 def filtrar_poblacion(min:int,max:int)->list:
-    lista_paises = armar_lista()
+    lista_paises = csv_cargar_lista()
     lista_poblacion = []
     for i in lista_paises:
         if (i["poblacion"] >= min) and (i["poblacion"] <= max):
@@ -113,7 +113,7 @@ def menu_superficie():
 
 
 def filtrar_superficie(min:int , max:int)->list:
-    lista_paises = armar_lista()
+    lista_paises = csv_cargar_lista()
     lista_superficie = []
     for i in lista_paises:
         if (i["superficie"] >= min) and (i["superficie"] <= max):
