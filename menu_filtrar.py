@@ -1,5 +1,5 @@
 from f_armar_lista import armar_lista
-from f_filtros import menu_continente
+from f_filtros import menu_continente, menu_poblacion
 
 lista_paises = armar_lista()
 
@@ -13,20 +13,20 @@ def filtrar_paises():
     [3] Por rango de superficie
     """)
 
-    while bandera_filtro:
 
+    while bandera_filtro:
         menu_filtro = input("Que opcion desea realizar: ")
 
 
         match menu_filtro:
             case "1":
-            menu_continente()
-
+                menu_continente()
+                bandera_filtro = False
             case "2":
-                pass
+                menu_poblacion()
 
             case "3":
                 pass
-            
+                
             case _: 
-                pass
+                print("Opcion no valida")

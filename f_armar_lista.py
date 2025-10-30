@@ -5,14 +5,14 @@ def armar_lista():
 
     lista_paises = []
 
-    with open ("paises.csv", "r") as archivo:
-        lista_paises = archivo.readlines()
-        for i in range (len(lista_paises)):
-            lista_paises[i] = lista_paises[i].strip().split(",")
-            lista_paises [i] = {"nombre":lista_paises[i][0], 
-                                "poblacion":int(lista_paises[i][1]),
-                                "superficie":float(lista_paises[i][2]),
-                                "continenete":lista_paises[i][3]
-                                }
-    
+    with open ("Paises.csv", encoding="utf-8") as archivo:
+        lector = csv.DictReader(archivo)
+        for fila in lector:
+            lista_paises.append({"nombre":fila["nombre"] ,
+                                  "poblacion":int(fila["poblacion"]) , 
+                                 "superficie":float(fila["superficie"]),
+                                 "continente":fila["continente"]})
+        
     return lista_paises
+
+

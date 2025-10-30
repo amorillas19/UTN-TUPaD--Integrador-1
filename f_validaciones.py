@@ -12,6 +12,18 @@ def validar_nombre (nombre_p :str)-> str :
     return nombre_p
 
 
+#Funcion general para validar el ingreso de un numero 
+def validar_numero_positivo(num:str)->bool:
+    if num.isdigit():
+        num = int(num)
+        if num > 0 :
+            return True
+        
+    return False
+        
+
+
+
 if __name__ == "__main__":
 
     print ("Probando validaciones...")
