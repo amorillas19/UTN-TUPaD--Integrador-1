@@ -19,8 +19,8 @@ def csv_cargar_lista():
             pais = {"nombre":nombre, 
                     "poblacion":poblacion,
                     "superficie":superficie,
-                    "continenete":continente
-                    }
+                    "continente":continente
+                    } 
             lista_paises.append(pais)
   
     return lista_paises
