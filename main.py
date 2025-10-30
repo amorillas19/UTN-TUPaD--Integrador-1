@@ -19,12 +19,7 @@ while True:
 
     elif opcion_menu == "2":
         filtrar_paises()
-        """
-        Al parecer hay un problema para encontrar los continentes (En el csv son una lista)
-        aparecen asi ["Asia"] , ["America] cuando deberian aparecer asi: Asia , America
-            ¯\_(ツ)_/¯
         
-        """
     elif opcion_menu == "3":
         print ("Ordenar paises")
 
