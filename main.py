@@ -1,5 +1,5 @@
-from menu_buscar import buscar_paises
-from menu_filtrar import filtrar_paises
+from menu_1_buscar import buscar_paises
+from menu_2_filtrar import filtrar_paises
 while True:
     print('''
     ======MENU DE OPERACIONES======
