@@ -3,6 +3,8 @@ from f_validaciones import validar_minimo_maximo
 
 lista_paises = csv_cargar_lista()
 
+#Sirve para pedirle al usuario el continente a buscar y utilizarlo como parametro para llamar a la funcion
+#filtrar_continente()
 
 def menu_continente():
     bandera_continente = True
@@ -29,35 +31,35 @@ def menu_continente():
             
             case "2":
                 opcion_continente = "américa del sur" 
-                print(filtrar_continente(opcion_continente))
+                filtrar_continente(opcion_continente)
                 bandera_continente = False
                 
             case "3":
                 opcion_continente = "europa" 
-                print(filtrar_continente(opcion_continente))
+                filtrar_continente(opcion_continente)
                 bandera_continente = False
                 
             case "4":
                 opcion_continente = "africa" 
-                print(filtrar_continente(opcion_continente))
+                filtrar_continente(opcion_continente)
                 bandera_continente = False
                 
 
             case "5":
                 opcion_continente = "asia" 
-                print(filtrar_continente(opcion_continente))
+                filtrar_continente(opcion_continente)
                 bandera_continente = False
                 
 
             case "6":
                 opcion_continente = "oceania" 
-                print(filtrar_continente(opcion_continente))
+                filtrar_continente(opcion_continente)
                 bandera_continente = False
                 
 
             case "7":
                 opcion_continente = "antártida" 
-                print(filtrar_continente(opcion_continente))
+                filtrar_continente(opcion_continente)
                 bandera_continente = False
 
             case _:
@@ -66,7 +68,7 @@ def menu_continente():
 
 
 
-
+#Toma el parametro de menu_continente () e imprime una lista de paises dentro de ese continente
 
 def filtrar_continente (filtro:str):
     print(f"""
@@ -87,6 +89,8 @@ def filtrar_continente (filtro:str):
 
     
 
+#En primer lugar llama a la funcion validar_minimo_maximo() para obtener dos int, los cuales va a utilizar
+#para llamar a la funcion filtrar_poblacion()
 
 def menu_poblacion ():
     print("""
@@ -99,14 +103,17 @@ def menu_poblacion ():
 
 
 
+
+#Sirve para imprimir una lista con los parametros ingresados anteriormente, recorre la lista_paises y con
+#un if comprueba si entrar en el rango adecuado, en el caso de que entren, son añadidos a lista_poblacion
+#y luego son impresos
 def filtrar_poblacion(min:int,max:int)->list:
     lista_poblacion = []
     for i in lista_paises:
         if (i["poblacion"] >= min) and (i["poblacion"] <= max):
             lista_poblacion.append(i)
     for i in lista_poblacion:
-        print (f"""
-nombre: {i["nombre"]}  poblacion: {i["poblacion"]}
+        print (f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}
 -------------------------------------------------""")
     
 

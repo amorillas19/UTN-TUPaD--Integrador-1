@@ -1,5 +1,7 @@
 from f_cargar_lista import csv_cargar_lista
 
+#Sirve para pedir al usuario una opcion para ordenar los paises, en base a eso crea una entrada para
+#la funcion revertir()
 
 def ordenar_paises ():
     bandera_ordenar = True
@@ -35,6 +37,8 @@ def ordenar_paises ():
                 print("Opcion no valida")
 
 
+#Sirve para preguntar al usuario por el orden en el que se va a organizar la lista y en base a eso llamar
+#a la funcion ordena()
 
 def revertir (entrada):
     bandera_reverir = True
@@ -61,7 +65,8 @@ def revertir (entrada):
 
 
 
-
+#Sirve para ordenar la lista en base a los parametros ingresados por el usuario, ademas permite ordenar la
+#lista en orden inverso 
 def ordenar(entrada:str, revertir:None):
     lista_paises = csv_cargar_lista()
     print("""

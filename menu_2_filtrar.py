@@ -1,8 +1,9 @@
-
 from f_filtros import menu_continente, menu_poblacion, menu_superficie
 
+#Sirve de menu para la opcion 2, le pide al usuario el parametro sobre el cual filtrar y en base a eso se
+#llama a las funciones pertinentes
+
 def filtrar_paises():
-    #Funcion de la opcion 2 del menu
     bandera_filtro = True
     print("""
     ========= FILTRO DE PAISES =========    

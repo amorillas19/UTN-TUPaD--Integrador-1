@@ -2,6 +2,8 @@ from f_cargar_lista import csv_cargar_lista
 
 lista_paises = csv_cargar_lista()
 
+#Sirve de menu para la opcion 4 y en base a eso llamar a las posibles funciones para sacar las estadisticas
+#del .csv
 def  estadisticas_paises ():
     print("""
 ========== ESTADISTICAS ==========
