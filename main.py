@@ -1,6 +1,10 @@
 from menu_1_buscar import buscar_paises
 from menu_2_filtrar import filtrar_paises
 from menu_3_ordenar import ordenar_paises
+from menu_4_estadisticas import estadisticas_paises
+
+
+
 while True:
     print('''
     ======MENU DE OPERACIONES======
@@ -25,7 +29,7 @@ while True:
         ordenar_paises()
 
     elif opcion_menu == "4":
-        print ("Mostrar estadisticas")
+        estadisticas_paises()
 
     elif opcion_menu == "5":
         print("Gracias por usar nuestro programa")
