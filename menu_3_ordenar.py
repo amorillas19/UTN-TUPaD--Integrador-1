@@ -64,7 +64,8 @@ def revertir (entrada):
 
 def ordenar(entrada:str, revertir:None):
     lista_paises = csv_cargar_lista()
-
+    print("""
+============================================ LISTA ORDENADA ============================================""")
     for i in range (len(lista_paises)-1):
         cambio = False
         for j in range(0 , len(lista_paises) -i -1):
@@ -78,9 +79,12 @@ def ordenar(entrada:str, revertir:None):
 
     if not revertir:
         for i in lista_paises:
-            print(f"{i}\n")
+            print(f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}  superficie: {i["superficie"]}  continente: {i["continente"]}
+--------------------------------------------------------------------------------------------------------""")
 
     else:
         lista_paises.reverse()
         for i in lista_paises:
-            print(f"{i}\n")
+           print(f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}  superficie: {i["superficie"]}  continente: {i["continente"]}
+--------------------------------------------------------------------------------------------------------""")
+    print("""========================================================================================================""")
