@@ -22,7 +22,8 @@ def  estadisticas_paises ():
                 bandera_estadisticas = False
 
             case "2":
-                pass
+                promedio_poblacion()
+                bandera_estadisticas = False
 
             case "3":
                 pass
@@ -84,4 +85,11 @@ Continente: {pais_maximo["continente"]}
 
 
 def promedio_poblacion ():
-    pass
+    suma = 0
+    for i in lista_paises:
+        suma += i["poblacion"]
+    print(f"""
+========================= PROMEDIO MUNDIAL =========================          
+El promedio de poblacion mundial es de {suma/len(lista_paises)} personas por pais 
+====================================================================
+""")
