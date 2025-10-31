@@ -26,8 +26,8 @@ def  estadisticas_paises ():
                 bandera_estadisticas = False
 
             case "3":
-                pass
-
+                promedio_superficie()
+                bandera_estadisticas = False
 
             case "4":
                 pass
@@ -83,13 +83,28 @@ Continente: {pais_maximo["continente"]}
 
       """)
 
-
+#Sirve para sacar el promedio de poblacion por pais a nivel mundial
 def promedio_poblacion ():
     suma = 0
     for i in lista_paises:
         suma += i["poblacion"]
     print(f"""
-========================= PROMEDIO MUNDIAL =========================          
+========================= PROMEDIO POBLACION =========================          
 El promedio de poblacion mundial es de {suma/len(lista_paises)} personas por pais 
-====================================================================
+======================================================================
 """)
+    
+
+
+
+
+def promedio_superficie ():
+    suma = 0
+    for i in lista_paises:
+        suma += i["superficie"]
+    print(f"""
+========================= PROMEDIO SUPERFICIE =========================          
+El promedio de superficie mundial es de {suma/len(lista_paises)} km2 por pais 
+=======================================================================
+""")
+    
