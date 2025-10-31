@@ -1,13 +1,20 @@
 
 #Funcion general para validar el ingreso de una palabra
 def validar_nombre (nombre_p :str)-> str :
-    
-    nombre_p = nombre_p.lower()
 
-    if nombre_p == "" or not(nombre_p.isalpha()):
-        print("No se pueden ingresar numeros, o dejar el campo vacio")
-        while (nombre_p == "" or not(nombre_p.isalpha())):
-            nombre_p :str = input("Que pais desea buscar? ")
+    while True:
+        nombre_p = nombre_p.lower()
+        if nombre_p == "":
+            print ("El campo no puede estar vacio")
+            nombre_p = input("Ingrese el nombre del pais que desea buscar: ")
+        
+        elif not nombre_p.isalpha():
+            print ("No se pueden ingresar numeros y/o simbolos")
+            nombre_p = input("Ingrese el nombre del pais que desea buscar: ")
+        
+        else:
+            print ("Nombre valido")
+            break
     
     return nombre_p
 
@@ -58,6 +65,6 @@ if __name__ == "__main__":
 
     print ("Probando validaciones...")
 
-    nombre_1 = "111"
+    nombre_1 = input("escriba nombre: ")
     resultado = validar_nombre(nombre_1)
     print(f"Prueba con {nombre_1}: {resultado}")
