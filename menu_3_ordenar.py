@@ -63,7 +63,6 @@ def revertir (entrada):
 
 
 def ordenar(entrada:str, revertir:None):
-    lista__original = csv_cargar_lista()
     lista_paises = csv_cargar_lista()
 
     for i in range (len(lista_paises)-1):
