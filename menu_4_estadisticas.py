@@ -30,7 +30,8 @@ def  estadisticas_paises ():
                 bandera_estadisticas = False
 
             case "4":
-                pass
+                cantidad_continente()
+                bandera_estadisticas = False
 
             case _:
                 pass
@@ -95,9 +96,7 @@ El promedio de poblacion mundial es de {suma/len(lista_paises)} personas por pai
 """)
     
 
-
-
-
+#Sirve para sacar el promedio de superficie por pais a nivel mundial
 def promedio_superficie ():
     suma = 0
     for i in lista_paises:
@@ -108,3 +107,43 @@ El promedio de superficie mundial es de {suma/len(lista_paises)} km2 por pais
 =======================================================================
 """)
     
+
+#Sirve para mostrar cantidad de paises por cada continente
+def cantidad_continente():
+
+    cant_europa = contar_paises_continente("europa")
+    cant_Namerica = contar_paises_continente("américa del norte")
+    cant_Samerica = contar_paises_continente("américa del sur")
+    cant_africa = contar_paises_continente("africa")
+    cant_asia = contar_paises_continente("asia")
+    cant_oceania = contar_paises_continente("oceania")
+    cant_antartida = contar_paises_continente("antártida")
+
+    print(f"""
+============== CANTIDAD POR CONTINENTE ==============          
+Europa tiene {cant_europa} paises
+-----------------------------------------------------
+America del norte y Centroamerica tienen {cant_Namerica} paises
+-----------------------------------------------------
+America del sur tiene {cant_Samerica} paises
+-----------------------------------------------------
+Africa tiene {cant_africa} paises
+-----------------------------------------------------
+Asia tiene {cant_asia} paises
+-----------------------------------------------------
+Oceania tiene {cant_oceania} paises
+-----------------------------------------------------
+Antartida tiene {cant_antartida} paises
+=====================================================
+          
+          """)
+    
+#Sirve para contar cuantos paises hay en un continente en especifico
+def contar_paises_continente (continente:str) -> int:
+
+    cont = 0
+    for i in lista_paises:
+        if i["continente"] == continente:
+            cont +=1
+
+    return cont
