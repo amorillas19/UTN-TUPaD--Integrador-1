@@ -1,5 +1,5 @@
 import csv
-from f_varias import limpiar_string
+from f_varias import limpiar_continente, traducir_continente
 
 #Funcion para que usando el CSV arme una lista de paises, donde cada pais es un diccionario con 4 claves y valores
 def csv_cargar_lista():
@@ -10,11 +10,15 @@ def csv_cargar_lista():
         reader = csv.DictReader(archivo)
 
         for linea in reader:
+
             nombre = linea["nombre"].lower()
+
             poblacion = int(linea["poblacion"])
+
             superficie = int(float(linea["superficie"]))
+
             continente = linea["continente"]
-            continente = limpiar_string(continente)
+            continente = traducir_continente(limpiar_continente(continente))
 
             pais = {"nombre":nombre, 
                     "poblacion":poblacion,
@@ -22,7 +26,7 @@ def csv_cargar_lista():
                     "continente":continente
                     } 
             lista_paises.append(pais)
-  
+    
     return lista_paises
 
 if __name__ == "__main__":

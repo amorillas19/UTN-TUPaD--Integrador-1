@@ -1,5 +1,6 @@
-def limpiar_string (a:str)->str:
+def limpiar_continente (a:str)->str:
     
+    a= a.lower()
     a = a.replace("[", "")
     a = a.replace("]", "")
     a = a.replace("'", "")
@@ -8,6 +9,22 @@ def limpiar_string (a:str)->str:
 
     return a
 
+def traducir_continente (cont:str)->str:
+
+    if cont == "europe":
+        cont = "europa"
+    
+    elif cont == "south america":
+        cont = "américa del sur"
+
+    elif cont == "north america":
+        cont = "américa del norte"
+
+    elif cont == "antarctica":
+        cont = "antártida"
+
+    return cont
+
 if __name__ == "__main__":
 
-    limpiar_string("['Europe', 'Asia']")
+    limpiar_continente("['Europe', 'Asia']")
