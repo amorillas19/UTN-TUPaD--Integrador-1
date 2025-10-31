@@ -20,40 +20,40 @@ def menu_continente():
         opcion_continente = input("Que continente desea buscar: ").strip()
         match opcion_continente:
             case "1":
-                opcion_continente = "North America" 
+                opcion_continente = "américa del norte" 
                 filtrar_continente(opcion_continente)
                 bandera_continente = False
             
             case "2":
-                opcion_continente = "South America" 
+                opcion_continente = "américa del sur" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
             case "3":
-                opcion_continente = "Europe" 
+                opcion_continente = "europa" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
             case "4":
-                opcion_continente = "Africa" 
+                opcion_continente = "africa" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "5":
-                opcion_continente = "Asia" 
+                opcion_continente = "asia" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "6":
-                opcion_continente = "Oceania" 
+                opcion_continente = "oceania" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
                 
 
             case "7":
-                opcion_continente = "Antarctica" 
+                opcion_continente = "antártida" 
                 print(filtrar_continente(opcion_continente))
                 bandera_continente = False
 
