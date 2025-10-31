@@ -1,6 +1,9 @@
 from f_cargar_lista import csv_cargar_lista
 from f_validaciones import validar_minimo_maximo
 
+lista_paises = csv_cargar_lista()
+
+
 def menu_continente():
     bandera_continente = True
     print("""
@@ -66,8 +69,9 @@ def menu_continente():
 
 
 def filtrar_continente (filtro:str):
-    print(filtro)
-    lista_paises = csv_cargar_lista()
+    print(f"""
+=========================== PAISES DE {filtro.upper()} ===========================
+          """)
     lista_filtrada = []
 
     for i in lista_paises :
@@ -75,37 +79,44 @@ def filtrar_continente (filtro:str):
             lista_filtrada.append(i)
             
     for i in lista_filtrada:
-        print(f"{i}\n")
+        print(f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}  superficie: {i["superficie"]}
+-----------------------------------------------------------------------------------""")
+
+    print("""===================================================================================
+          """)
 
     
 
 
 def menu_poblacion ():
     print("""
-    ============ POBLACION ============
-
-""")
+=================== POBLACION ===================""")
     minimo, maximo = validar_minimo_maximo()
+    print("""
+=============== FILTRO POBLACION ================""")
     filtrar_poblacion(minimo,maximo)
-    
+    print("""=================================================""")
 
 
 
 def filtrar_poblacion(min:int,max:int)->list:
-    lista_paises = csv_cargar_lista()
     lista_poblacion = []
     for i in lista_paises:
         if (i["poblacion"] >= min) and (i["poblacion"] <= max):
             lista_poblacion.append(i)
     for i in lista_poblacion:
-        print (f"{i}\n")
+        print (f"""
+nombre: {i["nombre"]}  poblacion: {i["poblacion"]}
+-------------------------------------------------""")
+    
 
 
 
 
 
 def menu_superficie():
-    print("========== SUPERFICIE ==========")
+    print(""""
+===================== SUPERFICIE =====================""")
 
     minimo, maximo = validar_minimo_maximo()
     filtrar_superficie(minimo,maximo)
@@ -113,12 +124,15 @@ def menu_superficie():
 
 
 def filtrar_superficie(min:int , max:int)->list:
-    lista_paises = csv_cargar_lista()
     lista_superficie = []
+    print("""
+================= FILTRO SUPERFICIE ==================""")
     for i in lista_paises:
         if (i["superficie"] >= min) and (i["superficie"] <= max):
             lista_superficie.append(i)
     for i in lista_superficie:
-        print (f"{i}\n")
+        print (f"""nombre: {i["nombre"]}  superficie: {i["superficie"]}
+------------------------------------------------------""")
+    print("======================================================")
 
 
