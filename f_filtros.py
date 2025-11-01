@@ -1,12 +1,12 @@
-from f_cargar_lista import csv_cargar_lista
+
 from f_validaciones import validar_minimo_maximo
 
-lista_paises = csv_cargar_lista()
+
 
 #Sirve para pedirle al usuario el continente a buscar y utilizarlo como parametro para llamar a la funcion
 #filtrar_continente()
 
-def menu_continente():
+def menu_continente(lista_paises):
     bandera_continente = True
     print("""
 ============== CONTINENTES ==============
@@ -26,40 +26,40 @@ def menu_continente():
         match opcion_continente:
             case "1":
                 opcion_continente = "américa del norte" 
-                filtrar_continente(opcion_continente)
+                filtrar_continente(lista_paises, opcion_continente)
                 bandera_continente = False
             
             case "2":
                 opcion_continente = "américa del sur" 
-                filtrar_continente(opcion_continente)
+                filtrar_continente(lista_paises, opcion_continente)
                 bandera_continente = False
                 
             case "3":
                 opcion_continente = "europa" 
-                filtrar_continente(opcion_continente)
+                filtrar_continente(lista_paises, opcion_continente)
                 bandera_continente = False
                 
             case "4":
                 opcion_continente = "africa" 
-                filtrar_continente(opcion_continente)
+                filtrar_continente(lista_paises, opcion_continente)
                 bandera_continente = False
                 
 
             case "5":
                 opcion_continente = "asia" 
-                filtrar_continente(opcion_continente)
+                filtrar_continente(lista_paises, opcion_continente)
                 bandera_continente = False
                 
 
             case "6":
                 opcion_continente = "oceania" 
-                filtrar_continente(opcion_continente)
+                filtrar_continente(lista_paises, opcion_continente)
                 bandera_continente = False
                 
 
             case "7":
                 opcion_continente = "antártida" 
-                filtrar_continente(opcion_continente)
+                filtrar_continente(lista_paises, opcion_continente)
                 bandera_continente = False
 
             case _:
@@ -70,7 +70,7 @@ def menu_continente():
 
 #Toma el parametro de menu_continente () e imprime una lista de paises dentro de ese continente
 
-def filtrar_continente (filtro:str):
+def filtrar_continente (lista_paises, filtro:str):
     print(f"""
 =========================== PAISES DE {filtro.upper()} ===========================
           """)
@@ -92,13 +92,13 @@ def filtrar_continente (filtro:str):
 #En primer lugar llama a la funcion validar_minimo_maximo() para obtener dos int, los cuales va a utilizar
 #para llamar a la funcion filtrar_poblacion()
 
-def menu_poblacion ():
+def menu_poblacion (lista_paises):
     print("""
 =================== POBLACION ===================""")
     minimo, maximo = validar_minimo_maximo()
     print("""
 =============== FILTRO POBLACION ================""")
-    filtrar_poblacion(minimo,maximo)
+    filtrar_poblacion(lista_paises, minimo,maximo)
     print("""=================================================""")
 
 
@@ -107,7 +107,7 @@ def menu_poblacion ():
 #Sirve para imprimir una lista con los parametros ingresados anteriormente, recorre la lista_paises y con
 #un if comprueba si entrar en el rango adecuado, en el caso de que entren, son añadidos a lista_poblacion
 #y luego son impresos
-def filtrar_poblacion(min:int,max:int)->list:
+def filtrar_poblacion(lista_paises, min:int,max:int)->list:
     lista_poblacion = []
     for i in lista_paises:
         if (i["poblacion"] >= min) and (i["poblacion"] <= max):
@@ -121,16 +121,16 @@ def filtrar_poblacion(min:int,max:int)->list:
 
 
 
-def menu_superficie():
+def menu_superficie(lista_paises):
     print(""""
 ===================== SUPERFICIE =====================""")
 
     minimo, maximo = validar_minimo_maximo()
-    filtrar_superficie(minimo,maximo)
+    filtrar_superficie(lista_paises, minimo,maximo)
 
 
 
-def filtrar_superficie(min:int , max:int)->list:
+def filtrar_superficie(lista_paises, min:int , max:int)->list:
     lista_superficie = []
     print("""
 ================= FILTRO SUPERFICIE ==================""")
