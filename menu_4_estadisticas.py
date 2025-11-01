@@ -50,13 +50,13 @@ def paises_menor_mayor_poblacion(lista_paises:list):
 
     print(f"""
 ========== PAIS CON MENOR POBLACION ==========
-Nombre: {pais_minimo["nombre"]}
+Nombre: {pais_minimo["nombre"]}.
 ----------------------------------------------
-Poblacion: {pais_minimo["poblacion"]}
+Poblacion: {pais_minimo["poblacion"]}.
 ----------------------------------------------
-Superficie: {pais_minimo["superficie"]}
+Superficie: {pais_minimo["superficie"]}.
 ----------------------------------------------
-Continente: {pais_minimo["continente"]}
+Continente: {pais_minimo["continente"]}.
 ==============================================      
 
       """)
@@ -71,13 +71,13 @@ Continente: {pais_minimo["continente"]}
 
     print(f"""
 ========== PAIS CON MAYOR POBLACION ==========
-Nombre: {pais_maximo["nombre"]}
+Nombre: {pais_maximo["nombre"]}.
 ----------------------------------------------
-Poblacion: {pais_maximo["poblacion"]}
+Poblacion: {pais_maximo["poblacion"]}.
 ----------------------------------------------
-Superficie: {pais_maximo["superficie"]}
+Superficie: {pais_maximo["superficie"]}.
 ----------------------------------------------
-Continente: {pais_maximo["continente"]}
+Continente: {pais_maximo["continente"]}.
 ==============================================      
 
       """)
@@ -89,7 +89,7 @@ def promedio_poblacion (lista_paises):
         suma += i["poblacion"]
     print(f"""
 ========================= PROMEDIO POBLACION =========================          
-El promedio de poblacion mundial es de {suma/len(lista_paises)} personas por pais 
+El promedio de poblacion mundial es de {suma/len(lista_paises)} personas por pais. 
 ======================================================================
 """)
     
@@ -101,7 +101,7 @@ def promedio_superficie (lista_paises):
         suma += i["superficie"]
     print(f"""
 ========================= PROMEDIO SUPERFICIE =========================          
-El promedio de superficie mundial es de {suma/len(lista_paises)} km2 por pais 
+El promedio de superficie mundial es de {suma/len(lista_paises)} km2 por pais. 
 =======================================================================
 """)
     
@@ -119,19 +119,19 @@ def cantidad_continente(lista_paises):
 
     print(f"""
 ============== CANTIDAD POR CONTINENTE ==============          
-Europa tiene {cant_europa} paises
+Europa tiene {cant_europa} paises.
 -----------------------------------------------------
-America del norte y Centroamerica tienen {cant_Namerica} paises
+America del norte y Centroamerica tienen {cant_Namerica} paises.
 -----------------------------------------------------
-America del sur tiene {cant_Samerica} paises
+America del sur tiene {cant_Samerica} paises.
 -----------------------------------------------------
-Africa tiene {cant_africa} paises
+Africa tiene {cant_africa} paises.
 -----------------------------------------------------
-Asia tiene {cant_asia} paises
+Asia tiene {cant_asia} paises.
 -----------------------------------------------------
-Oceania tiene {cant_oceania} paises
+Oceania tiene {cant_oceania} paises.
 -----------------------------------------------------
-Antartida tiene {cant_antartida} paises
+Antartida tiene {cant_antartida} paises.
 =====================================================
           
           """)

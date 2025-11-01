@@ -30,10 +30,10 @@ while True:
         filtrar_paises(lista_main)
         
     elif opcion_menu == "3":
-        ordenar_paises()
+        ordenar_paises(lista_main)
 
     elif opcion_menu == "4":
-        estadisticas_paises()
+        estadisticas_paises(lista_main)
 
     elif opcion_menu == "5":
         print("Gracias por usar nuestro programa")

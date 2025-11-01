@@ -81,7 +81,7 @@ def filtrar_continente (lista_paises, filtro:str):
             lista_filtrada.append(i)
             
     for i in lista_filtrada:
-        print(f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}  superficie: {i["superficie"]}
+        print(f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}  Superficie: {i["superficie"]}
 -----------------------------------------------------------------------------------""")
 
     print("""===================================================================================
@@ -113,7 +113,7 @@ def filtrar_poblacion(lista_paises, min:int,max:int)->list:
         if (i["poblacion"] >= min) and (i["poblacion"] <= max):
             lista_poblacion.append(i)
     for i in lista_poblacion:
-        print (f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}
+        print (f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}
 -------------------------------------------------""")
     
 
@@ -138,7 +138,7 @@ def filtrar_superficie(lista_paises, min:int , max:int)->list:
         if (i["superficie"] >= min) and (i["superficie"] <= max):
             lista_superficie.append(i)
     for i in lista_superficie:
-        print (f"""nombre: {i["nombre"]}  superficie: {i["superficie"]}
+        print (f"""Nombre: {i["nombre"]}  Superficie: {i["superficie"]}
 ------------------------------------------------------""")
     print("======================================================")
 

@@ -83,12 +83,12 @@ def ordenar(lista_paises, entrada:str, revertir:None):
 
     if not revertir:
         for i in lista_paises:
-            print(f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}  superficie: {i["superficie"]}  continente: {i["continente"]}
+            print(f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}  Superficie: {i["superficie"]}  Continente: {i["continente"]}
 --------------------------------------------------------------------------------------------------------""")
 
     else:
         lista_paises.reverse()
         for i in lista_paises:
-           print(f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}  superficie: {i["superficie"]}  continente: {i["continente"]}
+           print(f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}  Superficie: {i["superficie"]}  Continente: {i["continente"]}
 --------------------------------------------------------------------------------------------------------""")
     print("""========================================================================================================""")

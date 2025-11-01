@@ -9,10 +9,9 @@ from f_varias import limpiar_continente, traducir_continente
 def csv_to_lista():
 
     if not os.path.exists("paises.csv"):
-        print("El archivo CSV NO ya existe")
+        print("El archivo CSV NO existe.")
+        print("CREANDO.....")
         api_build.dict_to_csv()
-    else:
-        print("El archivo CSV EXISTE!!!")
 
     lista_paises = []
 
