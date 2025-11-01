@@ -109,13 +109,13 @@ El promedio de superficie mundial es de {suma/len(lista_paises)} km2 por pais.
 #Sirve para mostrar cantidad de paises por cada continente
 def cantidad_continente(lista_paises):
 
-    cant_europa = contar_paises_continente("europa")
-    cant_Namerica = contar_paises_continente("américa del norte")
-    cant_Samerica = contar_paises_continente("américa del sur")
-    cant_africa = contar_paises_continente("africa")
-    cant_asia = contar_paises_continente("asia")
-    cant_oceania = contar_paises_continente("oceania")
-    cant_antartida = contar_paises_continente("antártida")
+    cant_europa = contar_paises_continente(lista_paises, "europa")
+    cant_Namerica = contar_paises_continente(lista_paises, "américa del norte")
+    cant_Samerica = contar_paises_continente(lista_paises, "américa del sur")
+    cant_africa = contar_paises_continente(lista_paises, "africa")
+    cant_asia = contar_paises_continente(lista_paises, "asia")
+    cant_oceania = contar_paises_continente(lista_paises, "oceania")
+    cant_antartida = contar_paises_continente(lista_paises, "antártida")
 
     print(f"""
 ============== CANTIDAD POR CONTINENTE ==============          
