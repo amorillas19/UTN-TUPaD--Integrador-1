@@ -1,9 +1,9 @@
-from f_cargar_lista import csv_cargar_lista
+
 
 #Sirve para pedir al usuario una opcion para ordenar los paises, en base a eso crea una entrada para
 #la funcion revertir()
 
-def ordenar_paises ():
+def ordenar_paises (lista_paises):
     bandera_ordenar = True
     print("""
 ========== ORDENAR PAISES ==========
@@ -20,17 +20,17 @@ def ordenar_paises ():
         match menu_ordenar:
             case "1":
                 entrada = "nombre"
-                revertir(entrada)
+                revertir(lista_paises, entrada)
                 bandera_ordenar = False
 
             case "2":
                 entrada = "poblacion"
-                revertir(entrada)
+                revertir(lista_paises, entrada)
                 bandera_ordenar = False
 
             case "3":
                 entrada = "superficie"
-                revertir(entrada)
+                revertir(lista_paises, entrada)
                 bandera_ordenar = False
 
             case _:
@@ -40,7 +40,7 @@ def ordenar_paises ():
 #Sirve para preguntar al usuario por el orden en el que se va a organizar la lista y en base a eso llamar
 #a la funcion ordena()
 
-def revertir (entrada):
+def revertir (lista_paises, entrada):
     bandera_reverir = True
     while bandera_reverir:
         print("""
@@ -53,11 +53,11 @@ def revertir (entrada):
         match respuesta:
             case "1":
 
-                ordenar(entrada,False)
+                ordenar(lista_paises, entrada,False)
                 bandera_reverir = False
 
             case "2":
-                ordenar(entrada,True)
+                ordenar(lista_paises, entrada,True)
                 bandera_reverir = False
 
             case _:
@@ -67,8 +67,7 @@ def revertir (entrada):
 
 #Sirve para ordenar la lista en base a los parametros ingresados por el usuario, ademas permite ordenar la
 #lista en orden inverso 
-def ordenar(entrada:str, revertir:None):
-    lista_paises = csv_cargar_lista()
+def ordenar(lista_paises, entrada:str, revertir:None):
     print("""
 ============================================ LISTA ORDENADA ============================================""")
     for i in range (len(lista_paises)-1):
@@ -84,12 +83,12 @@ def ordenar(entrada:str, revertir:None):
 
     if not revertir:
         for i in lista_paises:
-            print(f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}  superficie: {i["superficie"]}  continente: {i["continente"]}
+            print(f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}  Superficie: {i["superficie"]}  Continente: {i["continente"]}
 --------------------------------------------------------------------------------------------------------""")
 
     else:
         lista_paises.reverse()
         for i in lista_paises:
-           print(f"""nombre: {i["nombre"]}  poblacion: {i["poblacion"]}  superficie: {i["superficie"]}  continente: {i["continente"]}
+           print(f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}  Superficie: {i["superficie"]}  Continente: {i["continente"]}
 --------------------------------------------------------------------------------------------------------""")
     print("""========================================================================================================""")

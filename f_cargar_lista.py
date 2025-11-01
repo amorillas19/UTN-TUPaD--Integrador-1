@@ -1,12 +1,17 @@
-import f_api
+import api_build
+import os
 import csv
 from f_varias import limpiar_continente, traducir_continente
 
 #Esta funcion es la mas importante, porque la utilizan las cuatro opciones, y llama a la funcion de api - Andres
 #Funcion para que usando el CSV arme una lista de paises, donde cada pais es un diccionario con 4 claves y valores
-def csv_cargar_lista():
 
-    f_api.escribir_csv()
+def csv_to_lista():
+
+    if not os.path.exists("paises.csv"):
+        print("El archivo CSV NO existe.")
+        print("CREANDO.....")
+        api_build.dict_to_csv()
 
     lista_paises = []
 
@@ -35,5 +40,5 @@ def csv_cargar_lista():
 
 if __name__ == "__main__":
 
-    csv_cargar_lista()
+    csv_to_lista()
    

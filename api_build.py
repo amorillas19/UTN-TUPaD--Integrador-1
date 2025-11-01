@@ -21,12 +21,13 @@ def armar_api():
 
 
 #Se procesa el JSON para que se convierta en una lista de diccionarios a trabajar
-def procesar_json():
+def json_to_dict():
 
     try:
         procesar_api=armar_api()
 
         if procesar_api is None:
+            print("Procesar API: Esta vacio")
             return []
         
         lista_paises_procesados = []
@@ -46,7 +47,7 @@ def procesar_json():
 
             lista_paises_procesados.append(pais_completo)
 
-        print ("Paises añadidos exitosamente a la lista.")
+        print ("JSON to DICT: Paises añadidos exitosamente a la lista.")
         return lista_paises_procesados
     
     except Exception as e:
@@ -54,10 +55,10 @@ def procesar_json():
 
 
 #Se escribe el csv local con los valores conseguidos
-def escribir_csv():
+def dict_to_csv():
 
     try:
-        procesar_lista=procesar_json()
+        procesar_lista=json_to_dict()
 
         with open("paises.csv", "w", newline="", encoding="utf-8") as archivo:
             campos = ["nombre", "poblacion", "superficie", "continente"]
@@ -75,4 +76,4 @@ def escribir_csv():
 
 
 if __name__ == "__main__":
-    escribir_csv()
+    dict_to_csv()

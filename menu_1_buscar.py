@@ -1,11 +1,10 @@
 from f_validaciones import validar_nombre
-from f_cargar_lista import csv_cargar_lista
 
 #Funcion de la opcion 1 del menu
 
-def buscar_paises():
+def buscar_paises(lista_main : list):
     try:
-        lista_paises = csv_cargar_lista()
+        lista_paises = lista_main
 
         opcion_busqueda :str = input("Que pais desea buscar? ")
         opcion_busqueda = validar_nombre(opcion_busqueda)
@@ -14,20 +13,20 @@ def buscar_paises():
         for i in range (len(lista_paises)):
             if opcion_busqueda == lista_paises[i]["nombre"]:
                 indice_exacto = i
-                return busqueda_exacta(indice_exacto)
+                return busqueda_exacta(lista_paises, indice_exacto)
         
-        return busqueda_parcial(opcion_busqueda)
+        return busqueda_parcial(lista_paises, opcion_busqueda)
         
 
 
     except Exception as e:
-        print (f"Ocurrio el error {type(e).__name__}: {e}")   
+        print (f"En funcion general: Ocurrio el error {type(e).__name__}: {e}")   
 
 
-def busqueda_exacta(indice_exacto:int):
+def busqueda_exacta(lista_paises:list, indice_exacto:int):
     try:
         i = indice_exacto
-        lista_paises = csv_cargar_lista()
+        
 
         print (f"""
     ===============BUSQUEDA EXACTA==================
@@ -43,12 +42,12 @@ def busqueda_exacta(indice_exacto:int):
         print ("    =========================================")
     
     except Exception as e:
-        print (f"Ocurrio el error{type(e).__name__}: {e}")
+        print (f"En funcion exacta: Ocurrio el error{type(e).__name__}: {e}")
 
-def busqueda_parcial(frase_buscar:str):
+def busqueda_parcial(lista_paises:list, frase_buscar:str):
 
     try:
-        lista_paises = csv_cargar_lista()
+        
         lista_paises_coincidencia = []
         contador_paises_coincidencia = 0
 
@@ -77,7 +76,7 @@ def busqueda_parcial(frase_buscar:str):
 
 
     except Exception as e:
-        print (f"Ocurrio el error {type(e).__name__}:_ {e}")
+        print (f"En funcion parcial: Ocurrio el error {type(e).__name__}:_ {e}")
 
 
 

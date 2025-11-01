@@ -1,10 +1,6 @@
-from f_cargar_lista import csv_cargar_lista
-
-lista_paises = csv_cargar_lista()
-
 #Sirve de menu para la opcion 4 y en base a eso llamar a las posibles funciones para sacar las estadisticas
 #del .csv
-def  estadisticas_paises ():
+def  estadisticas_paises (lista_paises):
     print("""
 ========== ESTADISTICAS ==========
 [1] Pais con mayor y menor poblacion          
@@ -24,15 +20,15 @@ def  estadisticas_paises ():
                 bandera_estadisticas = False
 
             case "2":
-                promedio_poblacion()
+                promedio_poblacion(lista_paises)
                 bandera_estadisticas = False
 
             case "3":
-                promedio_superficie()
+                promedio_superficie(lista_paises)
                 bandera_estadisticas = False
 
             case "4":
-                cantidad_continente()
+                cantidad_continente(lista_paises)
                 bandera_estadisticas = False
 
             case _:
@@ -54,13 +50,13 @@ def paises_menor_mayor_poblacion(lista_paises:list):
 
     print(f"""
 ========== PAIS CON MENOR POBLACION ==========
-Nombre: {pais_minimo["nombre"]}
+Nombre: {pais_minimo["nombre"]}.
 ----------------------------------------------
-Poblacion: {pais_minimo["poblacion"]}
+Poblacion: {pais_minimo["poblacion"]}.
 ----------------------------------------------
-Superficie: {pais_minimo["superficie"]}
+Superficie: {pais_minimo["superficie"]}.
 ----------------------------------------------
-Continente: {pais_minimo["continente"]}
+Continente: {pais_minimo["continente"]}.
 ==============================================      
 
       """)
@@ -75,73 +71,73 @@ Continente: {pais_minimo["continente"]}
 
     print(f"""
 ========== PAIS CON MAYOR POBLACION ==========
-Nombre: {pais_maximo["nombre"]}
+Nombre: {pais_maximo["nombre"]}.
 ----------------------------------------------
-Poblacion: {pais_maximo["poblacion"]}
+Poblacion: {pais_maximo["poblacion"]}.
 ----------------------------------------------
-Superficie: {pais_maximo["superficie"]}
+Superficie: {pais_maximo["superficie"]}.
 ----------------------------------------------
-Continente: {pais_maximo["continente"]}
+Continente: {pais_maximo["continente"]}.
 ==============================================      
 
       """)
 
 #Sirve para sacar el promedio de poblacion por pais a nivel mundial
-def promedio_poblacion ():
+def promedio_poblacion (lista_paises):
     suma = 0
     for i in lista_paises:
         suma += i["poblacion"]
     print(f"""
 ========================= PROMEDIO POBLACION =========================          
-El promedio de poblacion mundial es de {suma/len(lista_paises)} personas por pais 
+El promedio de poblacion mundial es de {suma/len(lista_paises)} personas por pais. 
 ======================================================================
 """)
     
 
 #Sirve para sacar el promedio de superficie por pais a nivel mundial
-def promedio_superficie ():
+def promedio_superficie (lista_paises):
     suma = 0
     for i in lista_paises:
         suma += i["superficie"]
     print(f"""
 ========================= PROMEDIO SUPERFICIE =========================          
-El promedio de superficie mundial es de {suma/len(lista_paises)} km2 por pais 
+El promedio de superficie mundial es de {suma/len(lista_paises)} km2 por pais. 
 =======================================================================
 """)
     
 
 #Sirve para mostrar cantidad de paises por cada continente
-def cantidad_continente():
+def cantidad_continente(lista_paises):
 
-    cant_europa = contar_paises_continente("europa")
-    cant_Namerica = contar_paises_continente("américa del norte")
-    cant_Samerica = contar_paises_continente("américa del sur")
-    cant_africa = contar_paises_continente("africa")
-    cant_asia = contar_paises_continente("asia")
-    cant_oceania = contar_paises_continente("oceania")
-    cant_antartida = contar_paises_continente("antártida")
+    cant_europa = contar_paises_continente(lista_paises, "europa")
+    cant_Namerica = contar_paises_continente(lista_paises, "américa del norte")
+    cant_Samerica = contar_paises_continente(lista_paises, "américa del sur")
+    cant_africa = contar_paises_continente(lista_paises, "africa")
+    cant_asia = contar_paises_continente(lista_paises, "asia")
+    cant_oceania = contar_paises_continente(lista_paises, "oceania")
+    cant_antartida = contar_paises_continente(lista_paises, "antártida")
 
     print(f"""
 ============== CANTIDAD POR CONTINENTE ==============          
-Europa tiene {cant_europa} paises
+Europa tiene {cant_europa} paises.
 -----------------------------------------------------
-America del norte y Centroamerica tienen {cant_Namerica} paises
+America del norte y Centroamerica tienen {cant_Namerica} paises.
 -----------------------------------------------------
-America del sur tiene {cant_Samerica} paises
+America del sur tiene {cant_Samerica} paises.
 -----------------------------------------------------
-Africa tiene {cant_africa} paises
+Africa tiene {cant_africa} paises.
 -----------------------------------------------------
-Asia tiene {cant_asia} paises
+Asia tiene {cant_asia} paises.
 -----------------------------------------------------
-Oceania tiene {cant_oceania} paises
+Oceania tiene {cant_oceania} paises.
 -----------------------------------------------------
-Antartida tiene {cant_antartida} paises
+Antartida tiene {cant_antartida} paises.
 =====================================================
           
           """)
     
 #Sirve para contar cuantos paises hay en un continente en especifico
-def contar_paises_continente (continente:str) -> int:
+def contar_paises_continente (lista_paises, continente:str) -> int:
 
     cont = 0
     for i in lista_paises:
