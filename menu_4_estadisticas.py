@@ -1,13 +1,18 @@
+import os
+from colorama import Fore, Back, Style, init
+init(autoreset=True)
+
 #Sirve de menu para la opcion 4 y en base a eso llamar a las posibles funciones para sacar las estadisticas
 #del .csv
 def  estadisticas_paises (lista_paises):
-    print("""
-========== ESTADISTICAS ==========
-[1] Pais con mayor y menor poblacion          
-[2] Promedio de poblacion         
-[3] Promedio de superficie
-[4] Cantidad de paises por continente        
-          """)
+    print(Back.LIGHTMAGENTA_EX + Fore.BLACK + "Opcion 4. Estadisticas de paises.")
+    print("")
+    print(Back.LIGHTMAGENTA_EX + Fore.BLACK + "=========== ESTADISTICAS ============")
+    print(Back.LIGHTWHITE_EX + Fore.BLACK + """[1] Pais con mayor y menor poblacion 
+[2] Promedio de poblacion            
+[3] Promedio de superficie           
+[4] Cantidad de paises por continente""")
+    print(Back.LIGHTMAGENTA_EX + Fore.BLACK + "=====================================")
     bandera_estadisticas = True
 
     while bandera_estadisticas:

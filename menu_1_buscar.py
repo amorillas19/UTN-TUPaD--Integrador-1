@@ -1,4 +1,7 @@
+import os
 from f_validaciones import validar_nombre
+from colorama import Fore, Back, Style, init
+init(autoreset=True)
 
 #Funcion de la opcion 1 del menu
 
@@ -6,7 +9,11 @@ def buscar_paises(lista_main : list):
     try:
         lista_paises = lista_main
 
-        opcion_busqueda :str = input("Que pais desea buscar? ")
+        print(Back.RED + Fore.WHITE + Style.BRIGHT + "Opción 1: Busqueda de pais.")
+        print("")
+        print(Back.LIGHTWHITE_EX + Fore.BLACK + "Ingrese el nombre del pais, o una parte de su nombre: ")
+        opcion_busqueda :str = input()
+        print ("")
         opcion_busqueda = validar_nombre(opcion_busqueda)
         indice_exacto = 0
 
@@ -27,19 +34,16 @@ def busqueda_exacta(lista_paises:list, indice_exacto:int):
     try:
         i = indice_exacto
         
-
-        print (f"""
-    ===============BUSQUEDA EXACTA==================
-        Pais   :     {lista_paises[i]["nombre"].capitalize()}
-            -------------------------- 
-
+        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "===============BUSQUEDA EXACTA==================")
+        print ("")
+        print ("        " + Back.LIGHTWHITE_EX + Fore.WHITE + Style.BRIGHT + "Pais: ")
+        print (f"""        {lista_paises[i]["nombre"].capitalize()} 
         Poblacion: {lista_paises[i]["poblacion"]} habitantes 
-
-        Superficie {lista_paises[i]["superficie"]} km2 
-
+        Superficie: {lista_paises[i]["superficie"]} km2 
         Continente: {lista_paises[i]["continente"].capitalize()}""")
-        
-        print ("    =========================================")
+        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "================================================")
+        pausar_menu = input("Pulse una tecla para continuar: ")
+        os.system('cls')
     
     except Exception as e:
         print (f"En funcion exacta: Ocurrio el error{type(e).__name__}: {e}")
@@ -58,21 +62,20 @@ def busqueda_parcial(lista_paises:list, frase_buscar:str):
                 contador_paises_coincidencia += 1
 
 
-        print(f"Usando el termino '{frase_buscar}', se encontraron {contador_paises_coincidencia} coincidencias:")
-
+        print(Back.LIGHTWHITE_EX + Fore.BLACK + f"Usando el termino '{frase_buscar}', se encontraron {contador_paises_coincidencia} coincidencias:")
+        print("")
+        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "===============BUSQUEDA PARCIAL==================")
         for coincidencias in lista_paises_coincidencia:
+            
             print (f"""
-    ===============BUSQUEDA PARCIAL==================
         Pais   :     {coincidencias["nombre"].capitalize()}
-            -------------------------- 
-
         Poblacion: {coincidencias["poblacion"]} habitantes 
-
         Superficie {coincidencias["superficie"]} km2 
-
         Continente: {coincidencias["continente"].capitalize()}""")
-        
-        print ("    =========================================")
+            print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "================================================")
+        print ("")
+        pausar_menu = input("Pulse una tecla para continuar: ")
+        os.system('cls')
 
 
     except Exception as e:

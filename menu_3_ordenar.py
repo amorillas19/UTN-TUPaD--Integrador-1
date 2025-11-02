@@ -1,10 +1,14 @@
-
+import os
+from colorama import Fore, Back, Style, init
+init(autoreset=True)
 
 #Sirve para pedir al usuario una opcion para ordenar los paises, en base a eso crea una entrada para
 #la funcion revertir()
 
 def ordenar_paises (lista_paises):
     bandera_ordenar = True
+
+    print(Back.LIGHTGREEN_EX + Fore.BLACK + "Opcion 3. Ordenar paises")
     print("""
 ========== ORDENAR PAISES ==========
 [1] Ordenar por nombre

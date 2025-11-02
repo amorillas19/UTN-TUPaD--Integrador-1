@@ -13,7 +13,6 @@ def validar_nombre (nombre_p :str)-> str :
             nombre_p = input("Ingrese el nombre del pais que desea buscar: ")
         
         else:
-            print ("Nombre valido")
             break
     
     return nombre_p
