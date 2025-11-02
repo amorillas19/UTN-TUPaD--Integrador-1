@@ -1,6 +1,8 @@
-
+import os
 from f_validaciones import validar_minimo_maximo
-
+from f_varias import normalizar_continente
+from colorama import Fore, Back, Style, init
+init(autoreset=True)
 
 
 #Sirve para pedirle al usuario el continente a buscar y utilizarlo como parametro para llamar a la funcion
@@ -8,21 +10,19 @@ from f_validaciones import validar_minimo_maximo
 
 def menu_continente(lista_paises):
     bandera_continente = True
-    print("""
-============== CONTINENTES ==============
-          
-[1] America del Norte y Centro America
-[2] America del Sur
-[3] Europa
-[4] Africa
-[5] Asia
-[6] Oceania
-[7] Antartica 
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + "============== CONTINENTES ===============")
+    print(Back.LIGHTWHITE_EX + Fore.BLACK + """    [1] America del Norte y Centro America
+    [2] America del Sur                   
+    [3] Europa                            
+    [4] Africa                            
+    [5] Asia                              
+    [6] Oceania                           
+    [7] Antartica                         """)
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + "==========================================")
 
-=========================================
-""")
     while bandera_continente:
-        opcion_continente = input("Que continente desea buscar: ").strip()
+        opcion_continente = input(Back.LIGHTWHITE_EX + Fore.BLACK + "Que continente desea buscar: ").strip()
+        print("")
         match opcion_continente:
             case "1":
                 opcion_continente = "américa del norte" 
@@ -71,21 +71,32 @@ def menu_continente(lista_paises):
 #Toma el parametro de menu_continente () e imprime una lista de paises dentro de ese continente
 
 def filtrar_continente (lista_paises, filtro:str):
-    print(f"""
-=========================== PAISES DE {filtro.upper()} ===========================
-          """)
+    print()
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + f"""
+=========================== PAISES DE {filtro.upper()} ===========================""")
+    print("")
     lista_filtrada = []
 
     for i in lista_paises :
         if i["continente"] == filtro:
-            lista_filtrada.append(i)
+            nombre_filtrado= i["nombre"]
+            nombre_filtrado = normalizar_continente(nombre_filtrado)
+            poblacion_filtrada = i["poblacion"]
+            superficie_filtrada = i["superficie"]
+            pais_filtrado = {"nombre": nombre_filtrado, "poblacion": poblacion_filtrada, "superficie": superficie_filtrada}
+
+            lista_filtrada.append(pais_filtrado)
             
     for i in lista_filtrada:
-        print(f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}  Superficie: {i["superficie"]}
------------------------------------------------------------------------------------""")
+        print(Fore.BLACK + Style.BRIGHT + f"""Nombre: {i["nombre"]}       || Poblacion: {i["poblacion"]} habitantes       || Superficie: {i["superficie"]} km2""")
+        print("-------------------------------------------------------------------------------------------")
 
-    print("""===================================================================================
+    print ("")
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + """===================================================================================
           """)
+    
+    pausar_menu = input("Pulse una tecla para continuar: ")
+    os.system('cls')
 
     
 
@@ -93,13 +104,16 @@ def filtrar_continente (lista_paises, filtro:str):
 #para llamar a la funcion filtrar_poblacion()
 
 def menu_poblacion (lista_paises):
-    print("""
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + """
 =================== POBLACION ===================""")
     minimo, maximo = validar_minimo_maximo()
-    print("""
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + """
 =============== FILTRO POBLACION ================""")
     filtrar_poblacion(lista_paises, minimo,maximo)
-    print("""=================================================""")
+    print(Back.LIGHTBLUE_EX + Fore.BLACK +  """=================================================""")
+
+    pausar_menu = input("Pulse una tecla para continuar: ")
+    os.system('cls')
 
 
 
@@ -112,9 +126,14 @@ def filtrar_poblacion(lista_paises, min:int,max:int)->list:
     for i in lista_paises:
         if (i["poblacion"] >= min) and (i["poblacion"] <= max):
             lista_poblacion.append(i)
-    for i in lista_poblacion:
-        print (f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}
--------------------------------------------------""")
+
+    if len(lista_poblacion) == 0 :
+        print (Back.LIGHTWHITE_EX + Fore.BLACK + "No se han encontrado paises con esos parametros. ")
+    else:
+        for i in lista_poblacion:
+            print(Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"]} || Poblacion: {i["poblacion"]}""")
+            print(Back.LIGHTWHITE_EX + Fore.BLACK + f"-------------------------------------------------")
+    
     
 
 
@@ -122,7 +141,7 @@ def filtrar_poblacion(lista_paises, min:int,max:int)->list:
 
 
 def menu_superficie(lista_paises):
-    print(""""
+    print(Back.LIGHTBLUE_EX + Fore.BLACK +  """"
 ===================== SUPERFICIE =====================""")
 
     minimo, maximo = validar_minimo_maximo()
@@ -132,14 +151,20 @@ def menu_superficie(lista_paises):
 
 def filtrar_superficie(lista_paises, min:int , max:int)->list:
     lista_superficie = []
-    print("""
+    print(Back.LIGHTBLUE_EX + Fore.BLACK +  """
 ================= FILTRO SUPERFICIE ==================""")
     for i in lista_paises:
         if (i["superficie"] >= min) and (i["superficie"] <= max):
             lista_superficie.append(i)
-    for i in lista_superficie:
-        print (f"""Nombre: {i["nombre"]}  Superficie: {i["superficie"]}
+    
+    if len(lista_superficie) == 0 :
+        print (Back.LIGHTWHITE_EX + Fore.BLACK + "No se han encontrado paises dentro de tales parametros")
+    else:
+        for i in lista_superficie:
+            print (Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"]} || Superficie: {i["superficie"]} km2
 ------------------------------------------------------""")
-    print("======================================================")
+    print(Back.LIGHTBLUE_EX + Fore.BLACK +  "======================================================")
+    pausar_menu = input("Pulse una tecla para continuar: ")
+    os.system('cls')
 
 
