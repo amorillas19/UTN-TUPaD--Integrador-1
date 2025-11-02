@@ -1,5 +1,8 @@
 import os
 from colorama import Fore, Back, Style, init
+from f_varias import imprimir_solo_diez
+
+
 init(autoreset=True)
 
 #Sirve para pedir al usuario una opcion para ordenar los paises, en base a eso crea una entrada para
@@ -86,13 +89,11 @@ def ordenar(lista_paises, entrada:str, revertir:None):
             break
 
     if not revertir:
-        for i in lista_paises:
-            print(f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}  Superficie: {i["superficie"]}  Continente: {i["continente"]}
---------------------------------------------------------------------------------------------------------""")
+        imprimir_solo_diez(lista_paises)
+        print("""--------------------------------------------------------------------------------------------------------""")
 
     else:
         lista_paises.reverse()
-        for i in lista_paises:
-           print(f"""Nombre: {i["nombre"]}  Poblacion: {i["poblacion"]}  Superficie: {i["superficie"]}  Continente: {i["continente"]}
---------------------------------------------------------------------------------------------------------""")
+        imprimir_solo_diez(lista_paises)
+
     print("""========================================================================================================""")
