@@ -12,12 +12,12 @@ def ordenar_paises (lista_paises):
 
         print(Back.LIGHTGREEN_EX + Fore.BLACK + "Opcion 3")
         print ("")
-        print(Back.LIGHTGREEN_EX + Fore.BLACK + "======== ORDENAR PAISES ========")
-        print(Back.LIGHTWHITE_EX + Fore.BLACK +"""  [1] Ordenar por nombre          
-        [2] Ordenar por poblacion       
-        [3] Ordenar por superficie
-        [4] Volver al menu principal      """)
-        print(Back.LIGHTGREEN_EX + Fore.BLACK + "================================")
+        print(Back.LIGHTGREEN_EX + Fore.BLACK + "========== ORDENAR PAISES ==========")
+        print(Back.LIGHTWHITE_EX + Fore.BLACK +"""        [1] Ordenar por nombre      
+        [2] Ordenar por poblacion   
+        [3] Ordenar por superficie  
+        [4] Volver al menu principal""")
+        print(Back.LIGHTGREEN_EX + Fore.BLACK + "====================================")
 
         menu_ordenar = input(Back.LIGHTWHITE_EX + Fore.BLACK + "Que opcion desea realizar: ")
         print("")
@@ -78,12 +78,12 @@ def ordenar_andres_a_to_z(lista_paises:list, parametro:str):
 
     az = sorted(lista_paises, key=itemgetter(parametro))
     print(Back.LIGHTGREEN_EX + Fore.BLACK +"""
-============================================ LISTA ORDENADA A-Z ============================================""")
+============================================ LISTA ORDENADA: ASCENDIENTE ============================================""")
     for i in range(len(az)):
-        print(f"""Nombre: {az[i]["nombre"]}  Poblacion: {az[i]["poblacion"]}  Superficie: {az[i]["superficie"]}  Continente: {az[i]["continente"]}""")
-        print("--------------------------------------------------------")
-    print("=============== FIN DE LISTA ===============")
-    pausar_menu = input("Pulse una tecla para continuar: ")
+        print(f"""Nombre: {az[i]["nombre"].capitalize()}  Poblacion: {az[i]["poblacion"]}  Superficie: {az[i]["superficie"]}km2 Continente: {az[i]["continente"].capitalize()}""")
+        print(Fore.BLACK + "--------------------------------------------------------")
+    print(Back.LIGHTGREEN_EX + Fore.BLACK +"=============== FIN DE LISTA ===============")
+    pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
     
 
@@ -91,10 +91,11 @@ def ordenar_andres_z_to_a(lista_paises:list, parametro:str):
 
     za = sorted(lista_paises, key=itemgetter(parametro), reverse=True)
     print(Back.LIGHTGREEN_EX + Fore.BLACK +"""
-============================================ LISTA ORDENADA Z-A ============================================""")
+============================================ LISTA ORDENADA: DESCENDIENTE ============================================""")
     for i in range(len(za)):
-        print(f"""Nombre: {za[i]["nombre"]}  Poblacion: {za[i]["poblacion"]}  Superficie: {za[i]["superficie"]}  Continente: {za[i]["continente"]}""")
-        print("--------------------------------------------------------")
-    pausar_menu = input("Pulse una tecla para continuar: ")
+        print(f"""Nombre: {za[i]["nombre"].capitalize()}  Poblacion: {za[i]["poblacion"]}  Superficie: {za[i]["superficie"]}km2  Continente: {za[i]["continente"].capitalize()}""")
+        print(Fore.BLACK + "--------------------------------------------------------")
+    print(Back.LIGHTGREEN_EX + Fore.BLACK +"=============== FIN DE LISTA ===============")    
+    pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
 

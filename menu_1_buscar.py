@@ -43,7 +43,7 @@ def busqueda_exacta(lista_paises:list, indice_exacto:int):
         Superficie: {lista_paises[i]["superficie"]} km2 
         Continente: {lista_paises[i]["continente"].capitalize()}""")
         print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "==================================================")
-        pausar_menu = input("Pulse una tecla para continuar: ")
+        pausar_menu = input("Pulse ENTER para continuar: ")
         os.system('cls')
     
     except Exception as e:
@@ -75,7 +75,7 @@ def busqueda_parcial(lista_paises:list, frase_buscar:str):
         Continente: {coincidencias["continente"].capitalize()}""")
             print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "==================================================")
         print ("")
-        pausar_menu = input("Pulse una tecla para continuar: ")
+        pausar_menu = input("Pulse ENTER para continuar: ")
         os.system('cls')
 
 

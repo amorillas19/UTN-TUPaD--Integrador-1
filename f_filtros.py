@@ -95,7 +95,7 @@ def filtrar_continente (lista_paises, filtro:str):
     print(Back.LIGHTBLUE_EX + Fore.BLACK + """===================================================================================
           """)
     
-    pausar_menu = input("Pulse una tecla para continuar: ")
+    pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
 
     
@@ -112,7 +112,7 @@ def menu_poblacion (lista_paises):
     filtrar_poblacion(lista_paises, minimo,maximo)
     print(Back.LIGHTBLUE_EX + Fore.BLACK +  """=================================================""")
 
-    pausar_menu = input("Pulse una tecla para continuar: ")
+    pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
 
 
@@ -164,7 +164,7 @@ def filtrar_superficie(lista_paises, min:int , max:int)->list:
             print (Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"]} || Superficie: {i["superficie"]} km2
 ------------------------------------------------------""")
     print(Back.LIGHTBLUE_EX + Fore.BLACK +  "======================================================")
-    pausar_menu = input("Pulse una tecla para continuar: ")
+    pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
 
 
