@@ -27,14 +27,14 @@ def traducir_continente (cont:str)->str:
 
 #En los filtros del menu 2, intento reemplazar los caracteres rancios.
 #En los filtros del menu 2, paso a mayusculas las iniciales
-def normalizar_continente(cont:str)->str:
+def normalizar_pais(pais:str)->str:
 
-    cont = cont.replace("é", "e")
-    cont = cont.replace("ã", "a")
-    cont = cont.capitalize()
+    pais = pais.replace("é", "e")
+    pais = pais.replace("ã", "a")
+    pais = pais.capitalize()
 
-    return cont
+    return pais
 
 if __name__ == "__main__":
 
-    normalizar_continente("Saint Barthélemy")
+    normalizar_pais("Saint Barthélemy")

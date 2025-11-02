@@ -8,8 +8,9 @@ init(autoreset=True)
 def buscar_paises(lista_main : list):
     try:
         lista_paises = lista_main
-
-        print(Back.RED + Fore.WHITE + Style.BRIGHT + "Opción 1: Busqueda de pais.")
+        print(Back.RED + Fore.WHITE + Style.BRIGHT + "Opcion 1.")
+        print("")
+        print(Back.RED + Fore.WHITE + Style.BRIGHT + "======== BUSCAR PAISES ========")
         print("")
         print(Back.LIGHTWHITE_EX + Fore.BLACK + "Ingrese el nombre del pais, o una parte de su nombre: ")
         opcion_busqueda :str = input()
@@ -34,14 +35,14 @@ def busqueda_exacta(lista_paises:list, indice_exacto:int):
     try:
         i = indice_exacto
         
-        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "===============BUSQUEDA EXACTA==================")
+        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "=============== BUSQUEDA EXACTA ==================")
         print ("")
         print ("        " + Back.LIGHTWHITE_EX + Fore.WHITE + Style.BRIGHT + "Pais: ")
         print (f"""        {lista_paises[i]["nombre"].capitalize()} 
         Poblacion: {lista_paises[i]["poblacion"]} habitantes 
         Superficie: {lista_paises[i]["superficie"]} km2 
         Continente: {lista_paises[i]["continente"].capitalize()}""")
-        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "================================================")
+        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "==================================================")
         pausar_menu = input("Pulse una tecla para continuar: ")
         os.system('cls')
     
@@ -64,7 +65,7 @@ def busqueda_parcial(lista_paises:list, frase_buscar:str):
 
         print(Back.LIGHTWHITE_EX + Fore.BLACK + f"Usando el termino '{frase_buscar}', se encontraron {contador_paises_coincidencia} coincidencias:")
         print("")
-        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "===============BUSQUEDA PARCIAL==================")
+        print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "=============== BUSQUEDA PARCIAL ==================")
         for coincidencias in lista_paises_coincidencia:
             
             print (f"""
@@ -72,7 +73,7 @@ def busqueda_parcial(lista_paises:list, frase_buscar:str):
         Poblacion: {coincidencias["poblacion"]} habitantes 
         Superficie {coincidencias["superficie"]} km2 
         Continente: {coincidencias["continente"].capitalize()}""")
-            print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "================================================")
+            print (Back.LIGHTBLACK_EX + Fore.WHITE + Style.BRIGHT + "==================================================")
         print ("")
         pausar_menu = input("Pulse una tecla para continuar: ")
         os.system('cls')

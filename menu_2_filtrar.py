@@ -9,7 +9,7 @@ init(autoreset=True)
 def filtrar_paises(lista_paises: list):
     bandera_filtro = True
 
-    print(Back.LIGHTBLUE_EX + Fore.BLACK + "Opcion 2. Filtrar paises.")
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + "Opcion 2.")
     print("")
     print(Back.LIGHTBLUE_EX + Fore.BLACK + "====== FILTRO DE PAISES =======")
     print(Back.LIGHTWHITE_EX + Fore.BLACK +"""    [1] Por continente         

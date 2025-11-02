@@ -1,6 +1,6 @@
 import os
 from f_validaciones import validar_minimo_maximo
-from f_varias import normalizar_continente
+from f_varias import normalizar_pais
 from colorama import Fore, Back, Style, init
 init(autoreset=True)
 
@@ -80,7 +80,7 @@ def filtrar_continente (lista_paises, filtro:str):
     for i in lista_paises :
         if i["continente"] == filtro:
             nombre_filtrado= i["nombre"]
-            nombre_filtrado = normalizar_continente(nombre_filtrado)
+            nombre_filtrado = normalizar_pais(nombre_filtrado)
             poblacion_filtrada = i["poblacion"]
             superficie_filtrada = i["superficie"]
             pais_filtrado = {"nombre": nombre_filtrado, "poblacion": poblacion_filtrada, "superficie": superficie_filtrada}
