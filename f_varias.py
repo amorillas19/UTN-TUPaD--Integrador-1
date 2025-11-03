@@ -35,6 +35,35 @@ def normalizar_pais(pais:str)->str:
 
     return pais
 
+def imprimir_solo_diez (lista:list):
+    cont = 0 
+    bandera_imprimir = True
+    
+    while bandera_imprimir:
+        for i in range(10):
+            if cont <len(lista):
+                print(f"""nombre: {lista[cont]["nombre"]}   poblacion: {lista[cont]["poblacion"]}  superficie: {lista[cont]["superficie"]}  continente: {lista[cont]["continente"]}
+--------------------------------------------------------------------------------------------------------- """)
+            cont +=1
+        bandera_opcion = True
+        if cont <len(lista): 
+            while bandera_opcion:
+                opcion = input("Desea seguir imprimiendo paises[S/N]:  ").strip().lower()
+
+                match opcion:
+                    case "n":
+                        bandera_opcion = False
+                        bandera_imprimir = False
+
+                    case "s":
+                        bandera_opcion = False
+
+                    case _:
+                        print("Opcion no valida")
+        else:
+            bandera_opcion = False
+            bandera_imprimir = False
+
 if __name__ == "__main__":
 
     normalizar_pais("Saint Barthélemy")
