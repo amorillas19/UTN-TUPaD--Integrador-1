@@ -92,8 +92,7 @@ def filtrar_continente (lista_paises, filtro:str):
         print("-------------------------------------------------------------------------------------------")
 
     print ("")
-    print(Back.LIGHTBLUE_EX + Fore.BLACK + """===================================================================================
-          """)
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + """===================================================================================""")
     
     pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
