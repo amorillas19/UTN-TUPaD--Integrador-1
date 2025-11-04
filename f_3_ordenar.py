@@ -1,5 +1,5 @@
 import os
-import f_cargar_lista
+import cargar_lista
 from operator import itemgetter
 from f_validaciones import validar_minimo_maximo
 from f_varias import normalizar_pais, imprimir_solo_diez
@@ -33,5 +33,5 @@ def ordenar_andres_z_to_a(lista_paises:list, parametro:str):
 
 if __name__ == "__main__":
     
-    lista_main = f_cargar_lista.csv_to_lista()
+    lista_main = cargar_lista.csv_to_lista()
     ordenar_andres_a_to_z(lista_main, "nombre")
