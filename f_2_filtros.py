@@ -133,11 +133,6 @@ def filtrar_poblacion(lista_paises, min:int,max:int)->list:
             print(Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"]} || Poblacion: {i["poblacion"]}""")
             print(Back.LIGHTWHITE_EX + Fore.BLACK + f"-------------------------------------------------")
     
-    
-
-
-
-
 
 def menu_superficie(lista_paises):
     print(Back.LIGHTBLUE_EX + Fore.BLACK +  """"
