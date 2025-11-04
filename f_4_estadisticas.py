@@ -1,5 +1,5 @@
 import os
-import f_cargar_lista
+import cargar_lista
 from f_validaciones import validar_minimo_maximo
 from f_varias import normalizar_pais
 from colorama import Fore, Back, Style, init
