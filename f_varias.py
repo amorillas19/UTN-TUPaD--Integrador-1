@@ -48,7 +48,8 @@ def imprimir_solo_diez (lista:list):
         bandera_opcion = True
         if cont <len(lista): 
             while bandera_opcion:
-                opcion = input("Desea seguir imprimiendo paises[S/N]:  ").strip().lower()
+                opcion = input("""
+                               Desea seguir imprimiendo paises[S/N]:  """).strip().lower()
 
                 match opcion:
                     case "n":
