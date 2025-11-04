@@ -27,21 +27,13 @@ def traducir_continente (cont:str)->str:
 
 #En los filtros del menu 2, intento reemplazar los caracteres rancios.
 #En los filtros del menu 2, paso a mayusculas las iniciales
-def normalizar_continente(cont:str)->str:
+def normalizar_pais(pais:str)->str:
 
-    cont = cont.replace("é", "e")
-    cont = cont.replace("ã", "a")
-    cont = cont.capitalize()
+    pais = pais.replace("é", "e")
+    pais = pais.replace("ã", "a")
+    pais = pais.capitalize()
 
-    return cont
-
-if __name__ == "__main__":
-
-    normalizar_continente("Saint Barthélemy")
-
-
-
-
+    return pais
 
 def imprimir_solo_diez (lista:list):
     cont = 0 
@@ -72,4 +64,6 @@ def imprimir_solo_diez (lista:list):
             bandera_opcion = False
             bandera_imprimir = False
 
+if __name__ == "__main__":
 
+    normalizar_pais("Saint Barthélemy")

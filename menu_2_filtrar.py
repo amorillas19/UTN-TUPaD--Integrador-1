@@ -7,34 +7,40 @@ init(autoreset=True)
 #llama a las funciones pertinentes
 
 def filtrar_paises(lista_paises: list):
-    bandera_filtro = True
+    try:
+        while True:
 
-    print(Back.LIGHTBLUE_EX + Fore.BLACK + "Opcion 2. Filtrar paises.")
-    print("")
-    print(Back.LIGHTBLUE_EX + Fore.BLACK + "====== FILTRO DE PAISES =======")
-    print(Back.LIGHTWHITE_EX + Fore.BLACK +"""    [1] Por continente         
-    [2] Por Rango de población 
-    [3] Por rango de superficie""")
-    print(Back.LIGHTBLUE_EX + Fore.BLACK + "===============================")
-    print("")
+            print(Back.LIGHTBLUE_EX + Fore.BLACK + "Opcion 2.")
+            print("")
+            print(Back.LIGHTBLUE_EX + Fore.BLACK + "====== FILTRO DE PAISES =======")
+            print(Back.LIGHTWHITE_EX + Fore.BLACK +"""    [1] Por continente         
+            [2] Por Rango de población 
+            [3] Por rango de superficie""")
+            print(Back.LIGHTBLUE_EX + Fore.BLACK + "===============================")
+            print("")
+
+            menu_filtro = input(Back.LIGHTWHITE_EX + Fore.BLACK + "Que opcion desea realizar: ")
+            print("")
+            os.system('cls')
 
 
-    while bandera_filtro:
-        menu_filtro = input(Back.LIGHTWHITE_EX + Fore.BLACK + "Que opcion desea realizar: ")
-        print("")
-        os.system('cls')
+            match menu_filtro:
+                case "1":
+                    menu_continente(lista_paises)
 
+                case "2":
+                    menu_poblacion(lista_paises)
 
-        match menu_filtro:
-            case "1":
-                menu_continente(lista_paises)
-                bandera_filtro = False
-            case "2":
-                menu_poblacion(lista_paises)
-                bandera_filtro = False
+                case "3":
+                    menu_superficie(lista_paises)
 
-            case "3":
-                menu_superficie(lista_paises)
-                bandera_filtro = False
-            case _: 
-                print("Opcion no valida")
+                case "4":
+                    pausar_menu = input("Volviendo al menu principal. Pulse ENTER. ")
+                    os.system('cls')
+                    break
+
+                case _: 
+                    print("Opcion no valida")
+    except Exception as e:
+        print (f"En funcion general: Ocurrio el error {type(e).__name__}: {e}")  
+    

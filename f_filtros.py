@@ -1,6 +1,6 @@
 import os
 from f_validaciones import validar_minimo_maximo
-from f_varias import normalizar_continente
+from f_varias import normalizar_pais
 from colorama import Fore, Back, Style, init
 init(autoreset=True)
 
@@ -80,7 +80,7 @@ def filtrar_continente (lista_paises, filtro:str):
     for i in lista_paises :
         if i["continente"] == filtro:
             nombre_filtrado= i["nombre"]
-            nombre_filtrado = normalizar_continente(nombre_filtrado)
+            nombre_filtrado = normalizar_pais(nombre_filtrado)
             poblacion_filtrada = i["poblacion"]
             superficie_filtrada = i["superficie"]
             pais_filtrado = {"nombre": nombre_filtrado, "poblacion": poblacion_filtrada, "superficie": superficie_filtrada}
@@ -92,10 +92,9 @@ def filtrar_continente (lista_paises, filtro:str):
         print("-------------------------------------------------------------------------------------------")
 
     print ("")
-    print(Back.LIGHTBLUE_EX + Fore.BLACK + """===================================================================================
-          """)
+    print(Back.LIGHTBLUE_EX + Fore.BLACK + """===================================================================================""")
     
-    pausar_menu = input("Pulse una tecla para continuar: ")
+    pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
 
     
@@ -112,7 +111,7 @@ def menu_poblacion (lista_paises):
     filtrar_poblacion(lista_paises, minimo,maximo)
     print(Back.LIGHTBLUE_EX + Fore.BLACK +  """=================================================""")
 
-    pausar_menu = input("Pulse una tecla para continuar: ")
+    pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
 
 
@@ -164,7 +163,7 @@ def filtrar_superficie(lista_paises, min:int , max:int)->list:
             print (Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"]} || Superficie: {i["superficie"]} km2
 ------------------------------------------------------""")
     print(Back.LIGHTBLUE_EX + Fore.BLACK +  "======================================================")
-    pausar_menu = input("Pulse una tecla para continuar: ")
+    pausar_menu = input("Pulse ENTER para continuar: ")
     os.system('cls')
 
 
