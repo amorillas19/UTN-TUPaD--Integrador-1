@@ -1,3 +1,6 @@
+#Funcion sencilla que viene a limpiar los datos de en que continente
+#Existe cada pais. Algunos existen en dos continentes (se simplifico a uno)
+#Y todos, venian en formato lista. Se convirtieron a formato string.
 def limpiar_continente (a:str)->str:
     
     a= a.lower()
