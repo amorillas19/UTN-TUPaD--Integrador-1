@@ -130,7 +130,7 @@ def filtrar_poblacion(lista_paises, min:int,max:int)->list:
         print (Back.LIGHTWHITE_EX + Fore.BLACK + "No se han encontrado paises con esos parametros. ")
     else:
         for i in lista_poblacion:
-            print(Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"]} || Poblacion: {i["poblacion"]}""")
+            print(Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"].capitalize()} || Poblacion: {i["poblacion"]}""")
             print(Back.LIGHTWHITE_EX + Fore.BLACK + f"-------------------------------------------------")
     
 
@@ -155,7 +155,7 @@ def filtrar_superficie(lista_paises, min:int , max:int)->list:
         print (Back.LIGHTWHITE_EX + Fore.BLACK + "No se han encontrado paises dentro de tales parametros")
     else:
         for i in lista_superficie:
-            print (Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"]} || Superficie: {i["superficie"]} km2
+            print (Back.LIGHTWHITE_EX + Fore.BLACK + f"""Nombre: {i["nombre"].capitalize()} || Superficie: {i["superficie"]} km2
 ------------------------------------------------------""")
     print(Back.LIGHTBLUE_EX + Fore.BLACK +  "======================================================")
     pausar_menu = input("Pulse ENTER para continuar: ")

@@ -45,7 +45,7 @@ def imprimir_solo_diez (lista:list):
     while bandera_imprimir:
         for i in range(10):
             if cont <len(lista):
-                print(f"""nombre: {lista[cont]["nombre"]}   poblacion: {lista[cont]["poblacion"]}  superficie: {lista[cont]["superficie"]}  continente: {lista[cont]["continente"]}
+                print(f"""nombre: {lista[cont]["nombre"].capitalize()}   poblacion: {lista[cont]["poblacion"]}  superficie: {lista[cont]["superficie"]} km2  continente: {lista[cont]["continente"]}
 --------------------------------------------------------------------------------------------------------- """)
             cont +=1
         bandera_opcion = True
