@@ -11,7 +11,7 @@ init(autoreset=True)
 while True:
 
     print("     " + Back.LIGHTCYAN_EX + Fore.BLACK + Style.BRIGHT + "==========================MENU DE OPERACIONES=========================")
-    print("     " +Back.LIGHTWHITE_EX + Fore.BLACK + "1- Buscar un pais por nombre)                                         ")
+    print("     " +Back.LIGHTWHITE_EX + Fore.BLACK + "1- Buscar un pais por nombre                                         ")
     print("     " +Back.LIGHTWHITE_EX + Fore.BLACK + "2- Filtrar paises (continente, poblacion, superficie)                 ")
     print("     " +Back.LIGHTWHITE_EX + Fore.BLACK + "3- Ordenar paises (nombre, poblacion, superficie)                     ")
     print("     " +Back.LIGHTWHITE_EX + Fore.BLACK + "4- Mostrar estadisticas (poblacion, superficie, paises por continente)")
